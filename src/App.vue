@@ -1,13 +1,12 @@
 <template>
   <LandingPage />
-  <header>Devsforest</header>
 </template>
 
 <script>
 import LandingPage from './components/LandingPage.vue';
 
 export default {
-  components: { LandingPage }
+  components: { LandingPage },
 };
 </script>
 
@@ -20,17 +19,5 @@ export default {
 }
 body {
   color: white;
-
-  // background-image: url('./images/background.svg');
-  // background-size: cover;
-  // background-repeat: no-repeat;
-}
-
-header {
-  position: absolute;
-  top: 2rem;
-  left: 8rem;
-  font-weight: 500;
-  font-size: 30px;
 }
 </style>

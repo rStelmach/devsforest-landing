@@ -1,16 +1,14 @@
 <template>
-  <div class="landing">
-    <nav>
-      <ul>
-        <li><a>Home</a></li>
-        <li><a>Services</a></li>
-        <li><a>About</a></li>
-        <li><a>Blog</a></li>
-        <li><a>Careers</a></li>
-        <li><a>Contact Us</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+      <li><a>Home</a></li>
+      <li><a>Services</a></li>
+      <li><a>About</a></li>
+      <li><a>Blog</a></li>
+      <li><a>Careers</a></li>
+      <li><a>Contact Us</a></li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -23,16 +21,15 @@ export default {};
   margin: 0;
   padding: 0;
 }
-.landing {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
+
 nav {
   ul {
+    margin-top: -3%;
+    margin-left: 30%;
     display: flex;
     justify-content: flex-end;
     align-items: baseline;
-    margin-right: 8rem;
+    margin-right: 6%;
 
     li:last-child {
       color: white;
@@ -43,7 +40,7 @@ nav {
     }
 
     li {
-      margin: 0 3rem;
+      margin: 0 4%;
       list-style: none;
       cursor: pointer;
 
