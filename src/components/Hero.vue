@@ -15,7 +15,6 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-  font-family: 'Poppins', sans-serif;
   display: flex;
 
   .text {

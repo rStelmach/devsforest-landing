@@ -16,10 +16,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-* {
-  margin: 0;
-  padding: 0;
-}
 header {
   margin-left: 7%;
   margin-top: 2%;
@@ -27,11 +23,10 @@ header {
   font-size: 30px;
 }
 
-div.landing {
+.landing {
   display: flex;
   flex-direction: column;
-  min-width: 99vw;
-  // max-width: 99vw;
+  min-width: 100vw;
   min-height: 100vh;
   background-image: url('../images/background.svg');
   background-repeat: no-repeat;
