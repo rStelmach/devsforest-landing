@@ -40,7 +40,7 @@ export default {};
       font-size: 18;
       font-weight: 600;
       padding: 15px 30px;
-      text-shadow: 0px 1px 2px rgb(100, 100, 100);
+      text-shadow: 0px 2px 2px rgb(172, 171, 171);
       box-shadow: 0px 1px 2px rgb(105, 105, 105);
       cursor: pointer;
     }
