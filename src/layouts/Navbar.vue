@@ -1,4 +1,5 @@
 <template>
+  <header>Devsforest</header>
   <nav>
     <ul>
       <li><a>Home</a></li>
@@ -20,6 +21,12 @@ export default {};
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+}
+header {
+  margin-left: 7%;
+  margin-top: 2%;
+  font-weight: 500;
+  font-size: 30px;
 }
 
 nav {
