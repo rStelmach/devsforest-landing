@@ -38,6 +38,7 @@ export default {};
     h1 {
       color: black;
       font-size: 50px;
+      font-weight: 700;
       line-height: 58px;
       margin-bottom: 5%;
     }
