@@ -61,9 +61,10 @@ export default {};
 <style lang="scss" scoped>
 .container {
   // overflow: hidden;
-  min-width: 100vw;
+  // min-width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
-  max-height: 100vh;
+
   padding-top: 4%;
   background-color: #fff8ff;
 
