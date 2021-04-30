@@ -22,8 +22,9 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-  min-width: 100vw;
+  // min-width: 100vw;
   min-height: 100vh;
+  max-width: 100vw;
   // background-color: green;
 
   img {
@@ -38,6 +39,7 @@ export default {};
     h1 {
       color: black;
       font-size: 50px;
+      font-weight: 700;
       line-height: 58px;
       margin-bottom: 5%;
     }
