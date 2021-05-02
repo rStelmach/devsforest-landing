@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="contact" class="container">
     <header>Get In Touch!</header>
     <h1>Contact Us For a quote, help ot to join the team</h1>
     <section class="contact">
@@ -17,63 +17,94 @@
       </div>
     </section>
     <div class="form">
-      <form>
-        <div class="wrapper">
-          <div class="form-control">
-            <label for="yourname">Your Name</label>
-            <input
-              type="text"
-              id="yourname"
-              placeholder=" &#xf007;      Your Name"
-              style="font-family:Poppins, FontAwesome"
-            />
+      <div class="wrapping">
+        <form id="my-form" @submit.prevent="submitForm">
+          <div class="wrapper">
+            <div class="form-control">
+              <label for="yourname">Your Name</label>
+              <input
+                type="text"
+                id="yourname"
+                placeholder=" &#xf007;      Your Name"
+                style="font-family:Poppins, FontAwesome"
+                v-model.trim="name"
+              />
+            </div>
+            <div class="form-control">
+              <label for="email"> Mail</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="&#xf0e0;      your@email.com"
+                style="font-family:Poppins, FontAwesome"
+                v-model.trim="email"
+              />
+            </div>
+            <div class="form-control">
+              <label for="phone">Phone</label>
+              <input
+                type="number"
+                id="phone"
+                placeholder=" &#xf879;      Phone"
+                style="font-family:Poppins, FontAwesome"
+                v-model="phone"
+              />
+            </div>
           </div>
-          <div class="form-control">
-            <label for="email"> Mail</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="&#xf0e0;      your@email.com"
-              style="font-family:Poppins, FontAwesome"
-            />
+          <div class="message">
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                rows="12"
+                placeholder="type here..."
+                maxlength="500"
+                style="font-family:Poppins, FontAwesome"
+                v-model="message"
+              />
+            </div>
           </div>
-          <div class="form-control">
-            <label for="phone">Phone</label>
-            <input
-              type="number"
-              id="phone"
-              placeholder=" &#xf879;      Phone"
-              style="font-family:Poppins, FontAwesome"
-            />
-          </div>
-        </div>
-        <div class="message">
-          <div class="form-control">
-            <label for="message">Message</label>
-            <textarea
-              id="message"
-              rows="12"
-              placeholder="type here..."
-              maxlength="500"
-              style="font-family:Poppins, FontAwesome"
-            />
-          </div>
-        </div>
-      </form>
-      <div class="button"><button>Send message</button></div>
+        </form>
+      </div>
+      <div class="button"><button type="submit" form="my-form">Send message</button></div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { ref } from 'vue';
+import axios from 'axios';
+
+export default {
+  setup() {
+    const name = ref('');
+    const email = ref('');
+    const phone = ref('');
+    const message = ref('');
+
+    function submitForm() {
+      console.log(name.value, email.value, phone.value, message.value);
+      axios.post('https://devs-test-d3a40-default-rtdb.europe-west1.firebasedatabase.app/messages.json', {
+        name: name.value,
+        email: email.value,
+        phone: phone.value,
+        message: message.value,
+      });
+      name.value = '';
+      email.value = '';
+      phone.value = '';
+      message.value = '';
+    }
+    return { submitForm, name, email, phone, message };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .container {
   //   min-width: 100vw;
   max-width: 100vw;
-  min-height: 110vh;
+  min-height: 120vh;
   background-color: #ffffff;
   header {
     text-align: center;

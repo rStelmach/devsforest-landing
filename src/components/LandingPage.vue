@@ -1,5 +1,5 @@
 <template>
-  <div class="landing">
+  <div id="landing" class="landing">
     <Navbar />
     <Hero />
   </div>

@@ -2,12 +2,12 @@
   <header>Devsforest</header>
   <nav>
     <ul>
-      <li><a>Home</a></li>
-      <li><a>Services</a></li>
-      <li><a>About</a></li>
-      <li><a>Blog</a></li>
+      <li><a href="#landing" v-smooth-scroll="{ duration: 1000 }">Home</a></li>
+      <li><a href="#tech" v-smooth-scroll="{ duration: 1000 }">Services</a></li>
+      <li><a href="#about" v-smooth-scroll="{ duration: 1000 }">About</a></li>
+      <li><a href="#footer" v-smooth-scroll="{ duration: 1000 }">Socials</a></li>
       <li><a>Careers</a></li>
-      <li><a>Contact Us</a></li>
+      <li><a href="#contact" v-smooth-scroll="{ duration: 1000 }">Contact Us</a></li>
     </ul>
   </nav>
 </template>
@@ -47,11 +47,13 @@ nav {
     }
 
     li {
+      color: white;
       margin: 0 4%;
       list-style: none;
       cursor: pointer;
 
       a {
+        color: white;
         font-size: 18px;
         text-decoration: none;
       }
