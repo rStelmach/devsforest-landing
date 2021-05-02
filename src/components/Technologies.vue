@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="tech" class="container">
     <section class="text">
       <h1>Technologies We Use</h1>
       <h2>
@@ -16,22 +16,16 @@
         </section>
       </div>
       <div>
-        <img src="../images/css.svg" alt="CSS" />
-        <h3>CSS</h3>
-        <section class="desc">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </section>
-      </div>
-      <div>
-        <img src="../images/js.svg" alt="JS" />
-        <h3>JS</h3>
-        <section class="desc">
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-        </section>
-      </div>
-      <div>
         <img src="../images/vuejs.svg" alt="VueJS" />
         <h3>VueJS</h3>
+        <section class="desc">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </section>
+      </div>
+
+      <div>
+        <img src="../images/css.svg" alt="CSS" />
+        <h3>CSS</h3>
         <section class="desc">
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </section>
@@ -43,6 +37,14 @@
           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         </section>
       </div>
+      <div>
+        <img src="../images/js.svg" alt="JS" />
+        <h3>JS</h3>
+        <section class="desc">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        </section>
+      </div>
+
       <div>
         <img src="../images/react.svg" alt="React" />
         <h3>React</h3>
@@ -93,7 +95,6 @@ export default {};
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
     flex-wrap: wrap;
 
     div {
@@ -104,6 +105,7 @@ export default {};
       height: 45%;
       border: 1px solid #ffddff;
       border-radius: 20px;
+      transition: 0.2s;
 
       img {
         display: block;
@@ -129,6 +131,9 @@ export default {};
           font-size: 18px;
         }
       }
+    }
+    div:hover {
+      box-shadow: 5px 24px 50px -10px rgba(135, 135, 135, 0.3);
     }
 
     // flex-basis: 1;

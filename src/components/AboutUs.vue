@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="about" class="container">
     <img src="../images/aboutus.svg" alt="about us" />
     <div class="text">
       <h1>About us</h1>
