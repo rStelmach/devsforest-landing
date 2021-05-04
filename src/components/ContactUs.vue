@@ -20,35 +20,41 @@
       <div class="wrapping">
         <form id="my-form" @submit.prevent="submitForm">
           <div class="wrapper">
-            <div class="form-control">
+            <div class="form-control" :class="{ invalid: !name.isValid }">
               <label for="yourname">Your Name</label>
               <input
                 type="text"
                 id="yourname"
                 placeholder=" &#xf007;      Your Name"
                 style="font-family:Poppins, FontAwesome"
-                v-model.trim="name"
+                v-model.trim="name.value"
+                @blur="clearValidity('name')"
               />
+              <p v-if="!name.isValid">Please enter your name !</p>
             </div>
-            <div class="form-control">
+            <div class="form-control" :class="{ invalid: !email.isValid }">
               <label for="email"> Mail</label>
               <input
                 type="email"
                 id="email"
                 placeholder="&#xf0e0;      your@email.com"
                 style="font-family:Poppins, FontAwesome"
-                v-model.trim="email"
+                v-model.trim="email.value"
+                @blur="clearValidity('email')"
               />
+              <p v-if="!email.isValid">Please enter correct e-mail !</p>
             </div>
-            <div class="form-control">
+            <div class="form-control " :class="{ invalid: !phone.isValid }">
               <label for="phone">Phone</label>
               <input
                 type="number"
                 id="phone"
                 placeholder=" &#xf879;      Phone"
                 style="font-family:Poppins, FontAwesome"
-                v-model="phone"
+                v-model.number="phone.value"
+                @blur="clearValidity('phone')"
               />
+              <p v-if="!phone.isValid">Please enter your phone number !</p>
             </div>
           </div>
           <div class="message">
@@ -60,7 +66,7 @@
                 placeholder="type here..."
                 maxlength="500"
                 style="font-family:Poppins, FontAwesome"
-                v-model="message"
+                v-model="message.value"
               />
             </div>
           </div>
@@ -72,17 +78,40 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 import axios from 'axios';
 
 export default {
   setup() {
-    const name = ref('');
-    const email = ref('');
-    const phone = ref('');
-    const message = ref('');
+    const name = reactive({ value: '', isValid: true });
+    const email = reactive({ value: '', isValid: true });
+    const phone = reactive({ value: null, isValid: true });
+    const message = reactive({ value: '', isValid: true });
+    const formIsValid = ref(true);
 
+    function clearValidity(input) {
+      this[input].isValid = true;
+    }
+    function validateForm() {
+      formIsValid.value = true;
+      if (name.value === '') {
+        name.isValid = false;
+        formIsValid.value = false;
+      }
+      if (email.value === '') {
+        email.isValid = false;
+        formIsValid.value = false;
+      }
+      if (phone.value === null) {
+        phone.isValid = false;
+        formIsValid.value = false;
+      }
+    }
     function submitForm() {
+      validateForm();
+      if (!formIsValid.value) {
+        return;
+      }
       console.log(name.value, email.value, phone.value, message.value);
       axios.post('https://devs-test-d3a40-default-rtdb.europe-west1.firebasedatabase.app/messages.json', {
         name: name.value,
@@ -95,14 +124,13 @@ export default {
       phone.value = '';
       message.value = '';
     }
-    return { submitForm, name, email, phone, message };
+    return { name, email, phone, message, formIsValid, submitForm, validateForm, clearValidity };
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  //   min-width: 100vw;
   max-width: 100vw;
   min-height: 120vh;
   background-color: #ffffff;
@@ -114,7 +142,6 @@ export default {
     padding-top: 5%;
   }
   h1 {
-    // padding-top: 2%;
     font-size: 18px;
     color: black;
     text-align: center;
@@ -122,9 +149,9 @@ export default {
   .contact {
     margin: 0 auto;
     display: flex;
-    // align-items: baseline;
+
     justify-content: space-between;
-    // background-color: red;
+
     width: 48%;
     padding: 2% 2%;
     .frame {
@@ -155,6 +182,7 @@ export default {
     border-radius: 10px;
     margin: 0 auto;
     width: 65%;
+    // display: flex;
     form {
       display: flex;
       flex-wrap: wrap;
@@ -182,11 +210,26 @@ export default {
           resize: none;
           padding-left: 5%;
         }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
+      }
+      .invalid {
+        label {
+          color: red;
         }
+        input {
+          border: 1px solid red;
+        }
+        ::-webkit-input-placeholder {
+          color: red;
+        }
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      p {
+        margin-top: -13%;
+        color: red;
       }
     }
     .message {
