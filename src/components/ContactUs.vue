@@ -47,7 +47,7 @@
             <div class="form-control " :class="{ invalid: !phone.isValid }">
               <label for="phone">Phone</label>
               <input
-                type="number"
+                type="text"
                 id="phone"
                 placeholder=" &#xf879;      Phone"
                 style="font-family:Poppins, FontAwesome"
@@ -85,7 +85,7 @@ export default {
   setup() {
     const name = reactive({ value: '', isValid: true });
     const email = reactive({ value: '', isValid: true });
-    const phone = reactive({ value: null, isValid: true });
+    const phone = reactive({ value: '', isValid: true });
     const message = reactive({ value: '', isValid: true });
     const formIsValid = ref(true);
 
@@ -102,7 +102,7 @@ export default {
         email.isValid = false;
         formIsValid.value = false;
       }
-      if (phone.value === null) {
+      if (phone.value === '') {
         phone.isValid = false;
         formIsValid.value = false;
       }
