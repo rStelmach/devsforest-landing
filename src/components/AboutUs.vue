@@ -1,6 +1,6 @@
 <template>
   <div id="about" class="container">
-    <img src="../images/aboutus.svg" alt="about us" />
+    <img class="desk" src="../images/aboutus.svg" alt="about us" />
     <div class="text">
       <h1>About us</h1>
       <p>
@@ -13,6 +13,7 @@
       </p>
       <button>Read more</button>
     </div>
+    <img class="mobile" src="../images/aboutus.svg" alt="about us" />
   </div>
 </template>
 
@@ -22,12 +23,9 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-  // min-width: 100vw;
   min-height: 100vh;
   max-width: 100vw;
-  // background-color: green;
-
-  img {
+  img.desk {
     margin-top: 10%;
     margin-left: 15%;
   }
@@ -38,20 +36,20 @@ export default {};
     margin-top: -24%;
     h1 {
       color: black;
-      font-size: 50px;
+      font-size: 5rem;
       font-weight: 700;
       line-height: 58px;
       margin-bottom: 5%;
     }
     p {
       color: black;
-      font-size: 18px;
+      font-size: 1.8rem;
       line-height: 28px;
       margin-bottom: 4%;
     }
     button {
       color: white;
-      font-size: 18px;
+      font-size: 1.8rem;
       font-weight: 600;
       padding: 1rem 2rem;
       border: none;
@@ -64,6 +62,37 @@ export default {};
         rgba(255, 68, 147, 1) 100%
       );
       cursor: pointer;
+    }
+  }
+  img.mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    min-height: 70vh;
+    img.desk {
+      display: none;
+    }
+    img.mobile {
+      display: block;
+      margin: 15rem auto;
+    }
+    .text {
+      width: 50%;
+      margin: 5% 10%;
+      h1 {
+        font-size: 6rem;
+      }
+      p {
+        line-height: 5rem;
+      }
+      button {
+        margin-top: 3rem;
+        padding: 3rem 5rem;
+        font-size: 2rem;
+      }
     }
   }
 }

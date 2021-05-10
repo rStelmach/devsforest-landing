@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="container ">
+  <div id="footer" class="container">
     <footer>
       <div class="wrapper">
         <div class="desc">
@@ -20,7 +20,7 @@
             </button>
           </div>
         </div>
-        <div class="ok">
+        <div class="lists">
           <h2>MENU</h2>
           <div class="list">
             <ul>
@@ -32,7 +32,7 @@
           </div>
         </div>
 
-        <div class="ok">
+        <div class="lists">
           <h2>SERVICES</h2>
           <div class="list">
             <ul>
@@ -43,7 +43,7 @@
             </ul>
           </div>
         </div>
-        <div class="ok">
+        <div class="lists">
           <h2>CONTACT</h2>
           <div class="list">
             <ul>
@@ -66,7 +66,6 @@ export default {};
 <style lang="scss" scoped>
 .container {
   color: white;
-  max-width: 100vw;
   height: 70vh;
   max-width: 100vw;
   background: rgb(255, 255, 255);
@@ -92,12 +91,12 @@ export default {};
       .desc {
         width: 17%;
         h1 {
-          font-size: 36px;
+          font-size: 3.6rem;
           font-weight: 500;
           margin-bottom: 5%;
         }
         p {
-          font-size: 18px;
+          font-size: 1.8rem;
           font-weight: 400;
         }
         .social {
@@ -118,7 +117,7 @@ export default {};
 
             i {
               color: white;
-              font-size: 20px;
+              font-size: 2rem;
             }
           }
           button:hover {
@@ -129,10 +128,10 @@ export default {};
           }
         }
       }
-      .ok {
+      .lists {
         h2 {
           font-weight: 500;
-          font-size: 24px;
+          font-size: 2.4rem;
           line-height: 5rem;
         }
         .list {
@@ -141,10 +140,11 @@ export default {};
             flex-direction: column;
             width: 150%;
             li {
-              //   padding-top: 10%;
+              font-size: 1.8rem;
               list-style: none;
               height: 3rem;
               a {
+                font-size: 1.8rem;
                 text-decoration: none;
                 color: white;
               }
@@ -164,6 +164,17 @@ export default {};
       font-weight: normal;
       color: white;
       text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .container {
+    max-height: 40vh;
+    footer {
+      padding-top: 30%;
+      .desc {
+        display: none;
+      }
     }
   }
 }

@@ -6,6 +6,7 @@
       <button>Read more</button>
     </div>
     <img src="../images/landing-image.svg" alt="office" />
+    <button class="responsive">Read more</button>
   </div>
 </template>
 
@@ -21,33 +22,73 @@ export default {};
     margin-left: 7%;
     margin-top: 10%;
     h1 {
-      line-height: 82px;
+      line-height: 8.2rem;
       font-weight: bold;
-      font-size: 72px;
+      font-size: 7.2rem;
       text-shadow: 0px 1px 2px rgb(90, 90, 90);
     }
     h2 {
       margin-top: 5%;
-      line-height: 38px;
+      font-size: 2.8rem;
+      line-height: 3.8rem;
       font-weight: normal;
     }
-    button {
-      margin-top: 5%;
-      background-color: white;
-      color: black;
-      border-radius: 5px;
-      border: none;
-      font-size: 18;
-      font-weight: 600;
-      padding: 15px 30px;
-      text-shadow: 0px 2px 2px rgba(172, 171, 171, 0.7);
-      box-shadow: 0px 1px 2px rgb(105, 105, 105);
-      cursor: pointer;
-    }
+  }
+  button {
+    margin-top: 5%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    text-shadow: 0px 2px 2px rgba(172, 171, 171, 0.7);
+    box-shadow: 0px 1px 2px rgb(105, 105, 105);
+    cursor: pointer;
   }
   img {
     margin-left: 7%;
     margin-top: 3%;
+  }
+  .responsive {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    flex-direction: column;
+    // height: 80vh;
+    .text {
+      h1 {
+        margin-top: 10%;
+        line-height: 7rem;
+        font-weight: bold;
+        font-size: 7rem;
+        text-shadow: 0px 1px 2px rgb(90, 90, 90);
+      }
+      h2 {
+        margin-top: 3%;
+        font-size: 2.8rem;
+        font-weight: normal;
+      }
+      button {
+        display: none;
+      }
+    }
+
+    img {
+      padding-top: 10%;
+      height: auto;
+      width: 80%;
+    }
+    .responsive {
+      display: block;
+      margin-left: 10%;
+      margin: 20% 45% 10% 15%;
+      font-size: 3rem;
+    }
   }
 }
 </style>

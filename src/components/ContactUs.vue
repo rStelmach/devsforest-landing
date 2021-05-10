@@ -62,7 +62,7 @@
               <label for="message">Message</label>
               <textarea
                 id="message"
-                rows="12"
+                rows="13"
                 placeholder="type here..."
                 maxlength="500"
                 style="font-family:Poppins, FontAwesome"
@@ -137,21 +137,19 @@ export default {
   header {
     text-align: center;
     color: black;
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: bold;
     padding-top: 5%;
   }
   h1 {
-    font-size: 18px;
+    font-size: 1.8rem;
     color: black;
     text-align: center;
   }
   .contact {
     margin: 0 auto;
     display: flex;
-
     justify-content: space-between;
-
     width: 48%;
     padding: 2% 2%;
     .frame {
@@ -172,68 +170,74 @@ export default {
       p {
         text-align: center;
         margin-top: 10%;
-        font-size: 16px;
+        font-size: 1.6rem;
         color: black;
       }
     }
   }
+
   .form {
     border: 1px solid #eaeaea;
     border-radius: 10px;
     margin: 0 auto;
-    width: 65%;
-    // display: flex;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+
     form {
       display: flex;
       flex-wrap: wrap;
       margin: 2% 5%;
-
+      justify-content: space-around;
+      .wrapper {
+        width: 50%;
+      }
       .form-control {
         margin: 0.5rem 0;
         width: 100%;
 
         label {
           display: block;
-          font-size: 18px;
+          font-size: 1.8rem;
           font-weight: 500;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.3rem;
         }
         input,
         textarea {
           background-color: #f1f1f1;
           border: none;
           border-radius: 10px;
-          font-size: 18px;
-          width: 240%;
-          min-height: 4rem;
-          margin-bottom: 16%;
+          font-size: 1.8rem;
+          width: 90%;
+          min-height: 7rem;
+          margin-bottom: 12%;
           resize: none;
           padding-left: 5%;
         }
-      }
-      .invalid {
-        label {
+        .invalid {
+          label {
+            color: red;
+          }
+          input {
+            border: 1px solid red;
+          }
+          ::-webkit-input-placeholder {
+            color: red;
+          }
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        p {
+          margin-top: -13%;
           color: red;
         }
-        input {
-          border: 1px solid red;
-        }
-        ::-webkit-input-placeholder {
-          color: red;
-        }
-      }
-      input::-webkit-outer-spin-button,
-      input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      p {
-        margin-top: -13%;
-        color: red;
       }
     }
     .message {
-      margin-left: 35%;
+      width: 50%;
       textarea {
         padding: 6.9%;
       }
@@ -242,7 +246,7 @@ export default {
   button {
     cursor: pointer;
     color: white;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 600;
     display: block;
     margin: 2% auto;
@@ -257,6 +261,22 @@ export default {
       rgba(255, 114, 121, 1) 50%,
       rgba(255, 68, 147, 1) 100%
     );
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    min-height: 70vh;
+    .contact {
+      width: 70%;
+      margin-bottom: 10%;
+      div {
+        margin: 2% auto;
+      }
+    }
+    .form {
+      width: 90%;
+    }
   }
 }
 </style>

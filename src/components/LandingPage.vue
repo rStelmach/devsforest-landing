@@ -19,11 +19,18 @@ export default {
   color: white;
   display: flex;
   flex-direction: column;
-  // min-width: 100vw;
   max-width: 100vw;
   min-height: 110vh;
   background-image: url('../images/background.svg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 375px) {
+  .landing {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
 }
 </style>

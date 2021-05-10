@@ -62,8 +62,6 @@ export default {};
 
 <style lang="scss" scoped>
 .container {
-  // overflow: hidden;
-  // min-width: 100vw;
   max-width: 100vw;
   min-height: 100vh;
 
@@ -75,19 +73,18 @@ export default {};
     text-align: center;
     margin: 0 auto;
     h1 {
-      font-size: 50px;
+      font-size: 5rem;
       font-weight: bold;
       color: black;
     }
     h2 {
       margin-top: 2%;
-      font-size: 18px;
+      font-size: 1.8rem;
       color: black;
     }
   }
   .box {
     display: flex;
-    // background-color: cadetblue;
     width: 61vw;
     height: 77vh;
     margin: 0 auto;
@@ -98,8 +95,8 @@ export default {};
     flex-wrap: wrap;
 
     div {
-      // display: flex;
-      // flex-direction: column;
+      display: flex;
+      flex-direction: column;
       background-color: #ffffff;
       width: 30%;
       height: 45%;
@@ -110,13 +107,13 @@ export default {};
       img {
         display: block;
         margin: 0 auto;
-        margin-top: 12%;
+        margin-top: 8%;
       }
       h3 {
         color: black;
-        margin-top: 8%;
+        margin-top: 5%;
         text-align: center;
-        font-size: 24px;
+        font-size: 2.4rem;
         font-weight: 500;
       }
 
@@ -127,8 +124,8 @@ export default {};
         p {
           color: #5b5b5b;
           text-align: center;
-          margin-top: 5%;
-          font-size: 18px;
+          // margin-top: 5%;
+          font-size: 1.8rem;
         }
       }
     }
@@ -137,6 +134,28 @@ export default {};
     }
 
     // flex-basis: 1;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    .box {
+      width: 95vw;
+      div {
+        height: 40%;
+        img {
+          margin-top: -5%;
+          height: 60%;
+          width: 60%;
+        }
+        h3 {
+          margin-top: -20%;
+        }
+        p {
+          margin-top: 5%;
+        }
+      }
+    }
   }
 }
 </style>

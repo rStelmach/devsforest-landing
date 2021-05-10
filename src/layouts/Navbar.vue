@@ -6,7 +6,6 @@
       <li><a href="#tech" v-smooth-scroll="{ duration: 1000 }">Services</a></li>
       <li><a href="#about" v-smooth-scroll="{ duration: 1000 }">About</a></li>
       <li><a href="#footer" v-smooth-scroll="{ duration: 1000 }">Socials</a></li>
-      <li><a>Careers</a></li>
       <li><a href="#contact" v-smooth-scroll="{ duration: 1000 }">Contact Us</a></li>
     </ul>
   </nav>
@@ -17,16 +16,11 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-* {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-}
 header {
   margin-left: 7%;
   margin-top: 2%;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 nav {
@@ -54,8 +48,27 @@ nav {
 
       a {
         color: white;
-        font-size: 18px;
+        font-size: 1.8rem;
         text-decoration: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    margin-left: 5%;
+    font-size: 2rem;
+  }
+  nav {
+    ul {
+      margin-right: 2%;
+      li:last-child {
+        text-align: center;
+        padding: 0.5rem 1rem;
+        a {
+          font-weight: 600;
+        }
       }
     }
   }
