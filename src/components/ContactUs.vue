@@ -132,7 +132,7 @@ export default {
 <style lang="scss" scoped>
 .container {
   max-width: 100vw;
-  min-height: 120vh;
+  min-height: 130vh;
   background-color: #ffffff;
   header {
     text-align: center;
@@ -261,6 +261,37 @@ export default {
       rgba(255, 114, 121, 1) 50%,
       rgba(255, 68, 147, 1) 100%
     );
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    min-height: 95vh;
+    .contact {
+      width: 70%;
+      margin-bottom: 10%;
+      div {
+        margin: 2% auto;
+      }
+    }
+    .form {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-height: 95vh;
+    .contact {
+      width: 70%;
+      margin-bottom: 10%;
+      div {
+        margin: 2% auto;
+      }
+    }
+    .form {
+      width: 90%;
+    }
   }
 }
 

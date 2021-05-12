@@ -25,7 +25,20 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media screen and (max-width: 1024px) {
+  .landing {
+    min-height: 100vh;
 
+    background-position: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing {
+    min-height: 100vh;
+    background-position: center;
+  }
+}
 @media screen and (max-width: 375px) {
   .landing {
     min-height: 100vh;

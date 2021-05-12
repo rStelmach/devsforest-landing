@@ -66,7 +66,7 @@ export default {};
 <style lang="scss" scoped>
 .container {
   color: white;
-  height: 70vh;
+  height: 67vh;
   max-width: 100vw;
   background: rgb(255, 255, 255);
   background-image: url('../images/footer.svg'),
@@ -102,7 +102,7 @@ export default {};
         .social {
           display: flex;
           width: 70%;
-          justify-content: space-around;
+          justify-content: space-between;
           margin-top: 10%;
 
           button {
@@ -167,6 +167,41 @@ export default {};
     }
   }
 }
+@media screen and (max-width: 1440px) {
+  .container {
+    footer {
+      height: 60vh;
+      .social {
+        width: 10%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-height: 45vh;
+    footer {
+      padding-top: 25%;
+      .desc {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-height: 45vh;
+    footer {
+      padding-top: 25%;
+      .desc {
+        display: none;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 375px) {
   .container {
     max-height: 40vh;

@@ -136,7 +136,49 @@ export default {};
     // flex-basis: 1;
   }
 }
+@media screen and (max-width: 1024px) {
+  .container {
+    .box {
+      width: 95vw;
+      div {
+        height: 40%;
+        img {
+          margin-top: -3%;
+          height: 50%;
+          width: 50%;
+        }
+        h3 {
+          margin-top: -6%;
+        }
+        p {
+          margin-top: 5%;
+        }
+      }
+    }
+  }
+}
 
+@media screen and (max-width: 768px) {
+  .container {
+    .box {
+      width: 95vw;
+      div {
+        height: 40%;
+        img {
+          margin-top: -3%;
+          height: 50%;
+          width: 50%;
+        }
+        h3 {
+          margin-top: -6%;
+        }
+        p {
+          margin-top: 5%;
+        }
+      }
+    }
+  }
+}
 @media screen and (max-width: 375px) {
   .container {
     .box {

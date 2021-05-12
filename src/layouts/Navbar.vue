@@ -54,6 +54,43 @@ nav {
     }
   }
 }
+@media screen and (max-width: 1024px) {
+  header {
+    margin-left: 5%;
+    font-size: 3rem;
+  }
+  nav {
+    ul {
+      margin-right: 2%;
+      li:last-child {
+        text-align: center;
+        padding: 1rem 1rem;
+        a {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    margin-left: 5%;
+    font-size: 3rem;
+  }
+  nav {
+    ul {
+      margin-right: 2%;
+      li:last-child {
+        text-align: center;
+        padding: 0.5rem 1rem;
+        a {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 375px) {
   header {
